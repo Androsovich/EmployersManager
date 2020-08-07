@@ -1,3 +1,3 @@
 # EmployersManager
-Technology stack : Spring MVC, Hibernate, MySQL
-View: Thymeleaf
+# Technology stack : Spring MVC, Hibernate, MySQL
+# View: Thymeleaf
