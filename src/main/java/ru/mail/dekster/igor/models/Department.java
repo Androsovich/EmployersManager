@@ -1,42 +1,18 @@
 package ru.mail.dekster.igor.models;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.List;
 
+@Getter
+@Setter
+@Builder(toBuilder = true)
+@Slf4j
 public class Department {
     private long id;
     private String name;
     private List<Employee> employees;
-
-    public Department() {
-    }
-
-    public Department(long id, String name, List<Employee> employees) {
-        this.id = id;
-        this.name = name;
-        this.employees = employees;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Employee> getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(List<Employee> employees) {
-        this.employees = employees;
-    }
 }
