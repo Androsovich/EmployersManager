@@ -12,7 +12,6 @@ import java.util.List;
 @Table(name = "employers")
 @Getter
 @Setter
-@Builder(toBuilder = true)
 public class Employee extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
