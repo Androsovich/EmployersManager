@@ -5,5 +5,5 @@ import ru.mail.dekster.igor.models.Employee;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
-    Employee findByNameAndSurname(String name, String surName);
+    Employee findByUserName(String userName);
 }

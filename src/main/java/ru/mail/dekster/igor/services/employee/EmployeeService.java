@@ -10,7 +10,7 @@ public interface EmployeeService {
 
     List<Employee> getAll();
 
-    Employee findByNameAndSurname(String name, String surName);
+    Employee findByUserName(String userName);
 
     Employee findById(Long id);
 
