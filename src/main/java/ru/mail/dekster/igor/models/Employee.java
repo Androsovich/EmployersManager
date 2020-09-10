@@ -3,6 +3,7 @@ package ru.mail.dekster.igor.models;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import ru.mail.dekster.igor.models.enums.Status;
 
 import javax.persistence.*;
 import java.util.List;
@@ -17,6 +18,12 @@ public class Employee extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department")
     private Department department;
+
+    @Column(name = "username")
+    private String userName;
+
+    @Column(name = "password")
+    private String password;
 
     @Column(name = "name")
     private String name;
