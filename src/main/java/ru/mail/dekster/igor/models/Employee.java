@@ -15,8 +15,8 @@ import java.util.List;
 public class Employee extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "department_id")
-    private Department Department;
+    @JoinColumn(name = "department")
+    private Department department;
 
     @Column(name = "name")
     private String name;
@@ -36,6 +36,10 @@ public class Employee extends BaseEntity {
 
     @Column(name = "stage")
     private Integer stage;
+
+    @Column(name = "status")
+    @Enumerated(value = EnumType.STRING)
+    private Status status;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "employee_roles",
