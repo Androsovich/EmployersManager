@@ -1,7 +1,7 @@
 # EmployersManager(Pet Project)
 # Technology stack : Spring MVC, Hibernate, MySQL, Spring Date, Spring Security
 # View: Thymeleaf
-==================================================================================
+==================================================================================\n
 Spring MVC - version 5.2.7.RELEASE
 Hibernate - version 5.2.9.Final
 MySQL (ver. 8.0.19)
