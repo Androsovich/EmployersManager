@@ -1,6 +1,5 @@
 package ru.mail.dekster.igor.models;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import ru.mail.dekster.igor.models.enums.Status;

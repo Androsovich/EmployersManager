@@ -1,6 +1,5 @@
 package ru.mail.dekster.igor.models;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +10,6 @@ import java.time.LocalDate;
 @Table(name = "vacations")
 @Getter
 @Setter
-@Builder(toBuilder = true)
 public class Vacation extends BaseEntity {
 
     @Column(name = "vacation")
