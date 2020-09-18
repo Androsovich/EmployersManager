@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@ComponentScan("ru.mail.dekster.igor.controllers")
+@ComponentScan("ru.mail.dekster.igor")
 @EnableWebMvc
 public class MvcConfig implements WebMvcConfigurer {
 
