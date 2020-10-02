@@ -15,6 +15,8 @@ public class WebAppInitializer implements WebApplicationInitializer {
     public void onStartup(ServletContext servletContext) throws ServletException {
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
         rootContext.register(OrmConfig.class);
+        rootContext.register(SecurityConfig.class);
+        rootContext.register(RootConfig.class);
         rootContext.setServletContext(servletContext);
 
         servletContext.addListener(new ContextLoaderListener(rootContext));
