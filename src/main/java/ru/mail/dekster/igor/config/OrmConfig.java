@@ -1,7 +1,6 @@
 package ru.mail.dekster.igor.config;
 
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,8 +9,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
@@ -64,21 +61,9 @@ public class OrmConfig {
         return em;
     }
 
-//    @Autowired
-//    @Bean
-//    public SessionFactory sessionFactory(DataSource dataSource) {
-//        LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
-//        sessionBuilder.scanPackages(env.getProperty("db.entitymanager.packages.to.scan"));
-//        sessionBuilder.addProperties(hibernateProperties());
-//        return sessionBuilder.buildSessionFactory();
-//    }
-
-
-//    @Autowired
     @Bean
     public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
         JpaTransactionManager txManager = new JpaTransactionManager();
-//        txManager.setSessionFactory(entityManagerFactory);
         txManager.setEntityManagerFactory(entityManagerFactory);
         return txManager;
     }
