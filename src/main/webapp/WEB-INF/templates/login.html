@@ -1,20 +1,25 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Login page</title>
 </head>
 <body>
 <div>
-    <form>
-        <input type="text" id="userName"/>
-        <input type="text" id="password"/>
+    <h1>Please input your user name and login </h1>
+    <div>
+        <label for="userName">user name</label><input type="text" id="userName"/>
+        <label for="password">password</label><input type="text" id="password"/>
         <input type="button" name="sub" onclick="sendData()"/>
-    </form>
+    </div>
+
     <script>
         function sendData() {
             let userName = document.getElementById("userName").value;
             let password = document.getElementById("password").value;
-            let param =`{
+            let param = `{
                 "userName" : "` + userName + `",
                 "password" : "` + password + `"
             }`
