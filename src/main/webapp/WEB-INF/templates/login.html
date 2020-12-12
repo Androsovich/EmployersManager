@@ -9,6 +9,7 @@
 <body>
 <div>
     <h1>Please input your user name and login </h1>
+    <div id="react"></div>
     <div>
         <label for="userName">user name</label><input type="text" id="userName"/>
         <label for="password">password</label><input type="text" id="password"/>
@@ -29,6 +30,19 @@
             request.open("POST", url, true);
             request.setRequestHeader("Content-type", "application/json");
             request.setRequestHeader("Authorization", "Bearer_");
+
+            request.addEventListener("readystatechange", () => {
+
+                /*   request.readyState - возвращает текущее состояние объекта XHR(XMLHttpRequest) объекта,
+                бывает 4 состояния 4-е состояние запроса - операция полностью завершена, пришел ответ от сервера,
+                вот то что нам нужно request.status это статус ответа,
+                нам нужен код 200 это нормальный ответ сервера, 401 файл не найден, 500 сервер дал ошибку и прочее...   */
+                if (request.readyState === 4 && request.status === 200) {
+
+                    // выводим в консоль то что ответил сервер
+                    console.log( request.responseText );
+                }
+            });
             request.send(param);
         }
 
