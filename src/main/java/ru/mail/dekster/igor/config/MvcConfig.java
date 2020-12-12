@@ -7,10 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
-import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.*;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
@@ -35,17 +32,6 @@ public class MvcConfig implements WebMvcConfigurer, ApplicationContextAware {
         return viewResolver;
     }
 
-    //    @Bean
-//    public ClassLoaderTemplateResolver templateResolver() {
-//        ClassLoaderTemplateResolver templateResolver =
-//                new ClassLoaderTemplateResolver();
-//        templateResolver.setPrefix("classpath:/templates/");
-//        templateResolver.setSuffix(".html");
-//        templateResolver.setTemplateMode("HTML5");
-//        templateResolver.setCharacterEncoding("UTF-8");
-//
-//        return templateResolver;
-//    }
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
@@ -73,9 +59,14 @@ public class MvcConfig implements WebMvcConfigurer, ApplicationContextAware {
                 "/images/**")
                 .addResourceLocations(
                         "/resources/",
-                        "classpath:/static/img/",
+                        "classpath:/static/images/",
                         "classpath:/static/css/",
                         "classpath:/static/js/");
+    }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("index");
     }
 
     @Override
